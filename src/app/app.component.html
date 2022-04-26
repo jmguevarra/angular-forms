@@ -36,10 +36,11 @@
             id="secret" 
             class="form-control" 
             name="question" 
-            ngModel>
+            [ngModel]="defaultQuestion">
               <option value="pet">Your first Pet?</option>
               <option value="teacher">Your first teacher?</option>
           </select>
+          <!-- [ngModel]="defaultQuestion" *** is a variable from its component ts using single binding/display value of [ngModel] -->
         </div>
         <button 
           class="btn btn-primary" 
