@@ -10,6 +10,7 @@ export class AppComponent {
   @ViewChild('f') signUpForm: NgForm;
   title = 'angular-forms';
   defaultQuestion  = 'pet';
+  answer = '';
   
  
   

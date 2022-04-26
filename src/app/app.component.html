@@ -42,6 +42,15 @@
           </select>
           <!-- [ngModel]="defaultQuestion" *** is a variable from its component ts using single binding/display value of [ngModel] -->
         </div>
+        <div class="form-group">
+          <textarea
+            class="form-control"
+            name="questionAnswer"
+            rows="3"
+            [(ngModel)]="answer"></textarea>
+            <!--  [(ngModel)]="answer" *** is a two way binding wherein you get data from answer and then displays is at the same time -->
+        </div>
+        <p> Your reply: {{ answer }}</p>
         <button 
           class="btn btn-primary" 
           type="submit"
