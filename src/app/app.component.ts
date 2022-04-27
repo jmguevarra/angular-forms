@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'angular-forms';
   defaultQuestion  = 'pet';
   answer = '';
+  genders = ['Male', 'Female'];
   
  
   
