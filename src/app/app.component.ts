@@ -13,17 +13,34 @@ export class AppComponent {
   answer = '';
   genders = ['Male', 'Female'];
   
- 
-  
-  // onSubmit(form: NgForm){
+  suggestUserName() {
+    const suggestedName = 'Superuser';
+
+    //Setting Multiple Values in the form
+    this.signUpForm.setValue({
+      userData: {
+        username: "Thea",
+        email: 'test1234@mail.com',
+        inputGenders: ''
+      },
+      question: 'pet',
+      questionAnswer: ''
+    });
+
+    //setting single value in the form field
+    // this.signUpForm.form.patchValue({
+    //   userData: {
+    //     username: suggestedName
+    //   }
+    // });
+
+  }
+
+  //onSubmit(form: NgForm){
   //   console.log(form);
   // }
-
   //or using ViewChild
   onSubmit(){
     console.log(this.signUpForm);
-  }
-  suggestUserName() {
-    const suggestedName = 'Superuser';
   }
 }
