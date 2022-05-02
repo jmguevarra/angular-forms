@@ -60,6 +60,12 @@ export class ReactiveFormComponent implements OnInit {
 
   onSubmit(){
     console.log(this.signupForm);
+    this.signupForm.reset();
+    
+    //default
+    this.signupForm.patchValue({
+      'gender' : "Male"
+    });
   }
 
   /** Hobbies */
