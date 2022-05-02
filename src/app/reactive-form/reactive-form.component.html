@@ -41,8 +41,18 @@
                 </label>
               </div>
             </div>
+            <div formArrayName="hobbies">
+                <h4>Hobbies</h4>
+                <button class="btn btn-info" (click)="onAddHobby()" type="button">Add Hobby</button>
+                <div class="form-group my-2" *ngFor="let hobby of hobbies; let i = index"><!-- hobbies is from getter function in the ts file -->
+                    <input 
+                        [formControlName]="i"
+                        type="text" 
+                        class="form-control">
+                </div>
+            </div>
           <button 
-            class="btn btn-primary" 
+            class="btn btn-primary mt-4" 
             type="submit"
             >Submit</button>
             <!--- [disabled]="condition" f here is the ngForm object above form tag itself. It's also from angular/form directives -->
