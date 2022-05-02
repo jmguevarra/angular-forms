@@ -1,4 +1,7 @@
 import { Component, OnInit} from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+
+
 @Component({
   selector: 'app-reactive-form',
   templateUrl: './reactive-form.component.html',
@@ -6,8 +9,17 @@ import { Component, OnInit} from '@angular/core';
 })
 export class ReactiveFormComponent implements OnInit {
   genders = ['Male', 'Female'];
+  signupForm: FormGroup;
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.signupForm = new FormGroup({
+      'username'  :   new FormControl(null),
+      'email'     :   new FormControl(null),
+      'gender'    :   new FormControl('Male') 
+    });
+  }
+
+  onSubmit(){
+    console.log(this.signupForm);
   }
 }
