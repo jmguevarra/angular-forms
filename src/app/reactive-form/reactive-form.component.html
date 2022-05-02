@@ -2,31 +2,31 @@
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
         <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-          <div 
-            id="user-data">
-            <div class="form-group">
-              <label for="username">Username</label>
-              <input 
-                type="text" 
-                id="username"
-                name="username" 
-                class="form-control"
-                formControlName="username">
-                <span 
-                    *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched"
-                    class="text-danger">Please enter valid username</span>
-            </div>
-            <div class="form-group">
-              <label for="email">Mail</label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email"
-                formControlName="email"
-                class="form-control">
-                <span 
-                    *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
-                    class="text-danger">Please enter valid email!</span>
+            <div id="user-data" formGroupName="userData">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input 
+                        type="text" 
+                        id="username"
+                        name="username" 
+                        class="form-control"
+                        formControlName="username">
+                        <span 
+                            *ngIf="!signupForm.get('userData.username').valid && signupForm.get('userData.username').touched"
+                            class="text-danger">Please enter valid username</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Mail</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        formControlName="email"
+                        class="form-control">
+                        <span 
+                            *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched"
+                            class="text-danger">Please enter valid email!</span>
+                </div>
             </div>
             <div class="form-group">
               <div class="form-check" *ngFor="let gender of genders">
@@ -41,8 +41,6 @@
                 </label>
               </div>
             </div>
-    
-          </div>
           <button 
             class="btn btn-primary" 
             type="submit"
