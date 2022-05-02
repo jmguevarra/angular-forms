@@ -10,6 +10,7 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 export class ReactiveFormComponent implements OnInit {
   genders = ['Male', 'Female'];
   signupForm: FormGroup;
+  blockedUsername = ['Chona', 'Gladys'];
 
   ngOnInit(): void {
     /**
@@ -20,7 +21,7 @@ export class ReactiveFormComponent implements OnInit {
      */
     this.signupForm = new FormGroup({
       'userData'  :   new FormGroup({
-        'username'  :   new FormControl(null, Validators.required),
+        'username'  :   new FormControl(null, [Validators.required, this.blockedUser.bind(this)]),
         'email'     :   new FormControl(null, [Validators.required, Validators.email]),
       }),
       'gender'    :   new FormControl('Male') ,
@@ -32,12 +33,21 @@ export class ReactiveFormComponent implements OnInit {
     console.log(this.signupForm);
   }
 
+  /** Hobbies */
   onAddHobby(){
     const control = new FormControl(null, Validators.required);
     (<FormArray>this.signupForm.get('hobbies')).push(control);
   }
-
   get hobbies(){
     return (this.signupForm.get('hobbies') as FormArray).controls;
   }
+  /** End Hobbies */
+
+  blockedUser(control: FormControl): {[s: string]: boolean } {
+    if(this.blockedUsername.indexOf(control.value) !== -1){ //didn't find it
+      return {'Blocked Username': true};
+    }
+    return null;
+  }
+
 }
