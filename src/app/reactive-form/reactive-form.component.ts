@@ -45,7 +45,7 @@ export class ReactiveFormComponent implements OnInit {
 
   blockedUser(control: FormControl): {[s: string]: boolean } {
     if(this.blockedUsername.indexOf(control.value) !== -1){ //didn't find it
-      return {'Blocked Username': true};
+      return {'blockedUsername': true};
     }
     return null;
   }
