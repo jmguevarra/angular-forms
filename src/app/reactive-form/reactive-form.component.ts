@@ -28,6 +28,16 @@ export class ReactiveFormComponent implements OnInit {
       'gender'    :   new FormControl('Male') ,
       'hobbies'   :   new FormArray([]),
     });
+
+    // Event value Changes when typing 
+    // this.signupForm.valueChanges.subscribe((value)=>{
+    //   console.log(value);
+    // });
+
+    // Event status Changes when typing
+    // this.signupForm.statusChanges.subscribe((value)=>{
+    //   console.log(value);
+    // });
   }
 
   onSubmit(){
