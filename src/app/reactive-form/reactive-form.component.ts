@@ -12,6 +12,12 @@ export class ReactiveFormComponent implements OnInit {
   signupForm: FormGroup;
 
   ngOnInit(): void {
+    /**
+     * @param of FormControl
+     * - default value
+     * - Validators
+     * - Async
+     */
     this.signupForm = new FormGroup({
       'username'  :   new FormControl(null),
       'email'     :   new FormControl(null),
