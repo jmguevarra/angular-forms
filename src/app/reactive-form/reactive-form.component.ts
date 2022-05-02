@@ -38,6 +38,24 @@ export class ReactiveFormComponent implements OnInit {
     // this.signupForm.statusChanges.subscribe((value)=>{
     //   console.log(value);
     // });
+
+    
+    // Setting Values in the form field
+    // this.signupForm.setValue({
+    //   'userData' : {
+    //     'username' : 'Max',
+    //     'email'    : 'max@test.com'
+    //   },
+    //   'gender'  : 'Male',
+    //   'hobbies' : []
+    // });
+  
+    // Setting Value in the form field
+    // this.signupForm.patchValue({
+    //   'userData' : {
+    //     'username' : 'Max',
+    //   }
+    // });
   }
 
   onSubmit(){
